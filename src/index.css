@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Paleta corporativa limpa - Inspirada no projeto Jornada */
+  /* Tom bege acinzentado suave para reduzir brilho e cansaço visual */
+  --background: #f5f4f0;
+  --foreground: #1a1a1a;
+  
+  /* Cards e superfícies - tom bege acinzentado harmonioso */
+  --card: #f7f6f2;
+  --card-foreground: #1a1a1a;
+  --popover: #f7f6f2;
+  --popover-foreground: #1a1a1a;
+  
+  /* Azul accent - cor principal */
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  
+  /* Cinzas neutros - tons mais suaves e acinzentados */
+  --secondary: #f0efeb;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f2f1ed;
+  --muted-foreground: #6b7280;
+  --accent: #edece8;
+  --accent-foreground: #1a1a1a;
+  
+  /* Outros */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #2563eb;
+  
+  /* Radius */
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Paleta dark mode */
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  
+  /* Cards e superfícies */
+  --card: #1e293b;
+  --card-foreground: #f1f5f9;
+  --popover: #1e293b;
+  --popover-foreground: #f1f5f9;
+  
+  /* Azul accent - cor principal */
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  
+  /* Cinzas neutros */
+  --secondary: #1e293b;
+  --secondary-foreground: #f1f5f9;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #334155;
+  --accent-foreground: #f1f5f9;
+  
+  /* Outros */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --border: #334155;
+  --input: #334155;
+  --ring: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  @apply text-foreground bg-background;
+  background-color: var(--background);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para react-big-calendar no dark mode */
+.dark .rbc-calendar {
+  background-color: var(--card) !important;
+  color: var(--foreground) !important;
+}
+
+.dark .rbc-header {
+  background-color: var(--muted) !important;
+  border-bottom-color: var(--border) !important;
+  color: var(--foreground) !important;
+}
+
+.dark .rbc-today {
+  background-color: var(--muted) !important;
+}
+
+.dark .rbc-off-range-bg {
+  background-color: var(--background) !important;
+}
+
+.dark .rbc-date-cell {
+  color: var(--foreground) !important;
+}
+
+.dark .rbc-day-bg {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-time-view {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-time-header-content {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-time-content {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-time-slot {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-toolbar {
+  color: var(--foreground) !important;
+}
+
+.dark .rbc-toolbar button {
+  color: var(--foreground) !important;
+  background-color: var(--card) !important;
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-toolbar button:hover {
+  background-color: var(--muted) !important;
+}
+
+.dark .rbc-toolbar button.rbc-active {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+}
+
+.dark .rbc-agenda-view table {
+  background-color: var(--card) !important;
+  color: var(--foreground) !important;
+}
+
+.dark .rbc-agenda-view table thead {
+  background-color: var(--muted) !important;
+}
+
+.dark .rbc-agenda-date-cell,
+.dark .rbc-agenda-time-cell {
+  color: var(--foreground) !important;
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-agenda-event-cell {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-month-view {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-month-row {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-day-slot {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-time-header {
+  border-color: var(--border) !important;
+}
+
+.dark .rbc-time-header-gutter {
+  border-color: var(--border) !important;
+}
+
+/* Estilos para eventos do calendário - texto em negrito e sem preenchimento */
+.rbc-event {
+  background-color: transparent !important;
+  font-weight: bold !important;
+  padding: 2px 4px !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
+.rbc-event-label {
+  font-weight: bold !important;
+}
+
+.rbc-event-content {
+  font-weight: bold !important;
+}
+
+/* Garantir que eventos tenham borda visível */
+.rbc-event.rbc-selected {
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+
+/* Melhorar visibilidade dos eventos no dark mode */
+.dark .rbc-event {
+  background-color: transparent !important;
+}
+
+.dark .rbc-event-content {
+  font-weight: bold !important;
+}
+
+/* Traduzir dias da semana do calendário para português */
+.rbc-month-view .rbc-header,
+.rbc-time-view .rbc-header,
+.rbc-day-view .rbc-header {
+  position: relative;
+  text-align: center;
+}
+
+/* Ocultar texto original e substituir por português */
+.rbc-month-view .rbc-header > *,
+.rbc-time-view .rbc-header > *,
+.rbc-day-view .rbc-header > * {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.rbc-month-view .rbc-header:nth-child(1)::after,
+.rbc-time-view .rbc-header:nth-child(1)::after,
+.rbc-day-view .rbc-header:nth-child(1)::after {
+  content: 'Dom';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.rbc-month-view .rbc-header:nth-child(2)::after,
+.rbc-time-view .rbc-header:nth-child(2)::after,
+.rbc-day-view .rbc-header:nth-child(2)::after {
+  content: 'Seg';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.rbc-month-view .rbc-header:nth-child(3)::after,
+.rbc-time-view .rbc-header:nth-child(3)::after,
+.rbc-day-view .rbc-header:nth-child(3)::after {
+  content: 'Ter';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.rbc-month-view .rbc-header:nth-child(4)::after,
+.rbc-time-view .rbc-header:nth-child(4)::after,
+.rbc-day-view .rbc-header:nth-child(4)::after {
+  content: 'Qua';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.rbc-month-view .rbc-header:nth-child(5)::after,
+.rbc-time-view .rbc-header:nth-child(5)::after,
+.rbc-day-view .rbc-header:nth-child(5)::after {
+  content: 'Qui';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.rbc-month-view .rbc-header:nth-child(6)::after,
+.rbc-time-view .rbc-header:nth-child(6)::after,
+.rbc-day-view .rbc-header:nth-child(6)::after {
+  content: 'Sex';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.rbc-month-view .rbc-header:nth-child(7)::after,
+.rbc-time-view .rbc-header:nth-child(7)::after,
+.rbc-day-view .rbc-header:nth-child(7)::after {
+  content: 'Sáb';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: inherit;
+}
