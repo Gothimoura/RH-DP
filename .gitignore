@@ -34,5 +34,3 @@ env
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-schema.sql
